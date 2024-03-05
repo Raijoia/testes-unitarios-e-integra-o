@@ -27,4 +27,11 @@ describe('Teste do carrinho', () => {
     const carrinho = new Carrinho();
     expect(carrinho).toHaveProperty('total');
   });
+
+  it('Deve lançar erro ao finalizar compra com carrinho vazio', () => {
+    const carrinho = new Carrinho();
+    expect(() => carrinho.finalizaCompra()).toThrowError(
+      'Carrinho de compras vazio',
+    );
+  });
 });
